@@ -13,7 +13,7 @@ namespace JSONConvertor.Controllers
     public class JSONController : ControllerBase
     {
         [HttpPost]
-        [Route("json/validateJSON")]
+        [Route("validateJSON")]
         public IActionResult ValidateJSON([FromBody]JsonObject jsonContent)
         {
             LogHelper.LogInfo("Post request to Validate JSON");
@@ -36,10 +36,10 @@ namespace JSONConvertor.Controllers
         }
 
         [HttpPost]
-        [Route("json/convertJSONtoXML")]
+        [Route("convertJSONtoXML")]
         public IActionResult ConvertJSONtoXML([FromBody]JsonObject jsonContent)
         {
-            LogHelper.LogError("Post request");
+            LogHelper.LogInfo("Post request to Convert JSON to XML");
             string jsonString = jsonContent.ToString();
             try
             {
